@@ -1,32 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Doit</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <!-- <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="#">Do-it</a>
-
-          <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <form action="" class="pull-right">
-
-            <button class="btn" type="submit">Sign in with twitter</button>
-          </form>
-        </div>
-      </div>
-    </div> -->
-
-  <div class="container">
-    <%= yield %>
-  </div>
-</body>
+  <head>
+    <title>Doit</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>

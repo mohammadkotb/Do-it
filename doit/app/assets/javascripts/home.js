@@ -4,8 +4,8 @@ $(function() {
     addTaskRemotely();
     return false;
   });
-  bindTodos($('.todos input[type="checkbox"]'), true);
-  bindTodos($('.completed_todos input[type="checkbox"]'), false);
+  bindTodos($('.todos input[type="checkbox"]'), false);
+  bindTodos($('.completed_todos input[type="checkbox"]'), true);
 });
 
 function bindTodos(elements, completed) {
@@ -16,7 +16,7 @@ function bindTodos(elements, completed) {
       parent.slideToggle("fast", function() {
         input.unbind();
         bindTodos(input, !completed);
-        parent.append(completed? '.completed_todos' : '.todos').slideToggle();
+        parent.appendTo((completed? '.todos' : '.completed_todos')).slideToggle();
       });
     });
   });
@@ -32,17 +32,17 @@ function appendTodo() {
     });
     var span = $('<span/>', {text: ' ' + input.val()});
 
-    checkbox.append(p);
-    span.append(p);
-    p.append(div);
-    div.append('.todos');
+    checkbox.appendTo(p);
+    span.appendTo(p);
+    p.appendTo(div);
+    div.appendTo('.todos');
 
     // to bind the new element in the uncompleted todos
     bindTodos(checkbox, false);
   }
 }
 
-function saveTaskRemotely() {
+function addTaskRemotely() {
   var todoInput = $('#todo');
   var value = todoInput.val();
   todoInput.val('');
