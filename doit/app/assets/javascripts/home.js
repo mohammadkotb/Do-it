@@ -23,7 +23,7 @@ function bindTodos(elements, completed) {
 }
 
 function appendTodo() {
-  var input = $('#todo);
+  var input = $('#todo');
   if (input.val()) {
     var div = $('<div/>', {class: 'todo_item'});
     var p = $('<p/>');
