@@ -7,6 +7,22 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+<div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Do it</a>
+
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <form action="" class="pull-right">
+            <button class="btn primary" type="submit">Sign in with Twitter</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <%= yield %>
     </div>

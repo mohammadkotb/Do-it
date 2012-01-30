@@ -1,7 +1,8 @@
-$(function() {
+$(document).ready(function() {
+  console.log("I'm here!!");
   $("#add_todo").submit(function() {
     appendTodo();
-    addTaskRemotely();
+    saveTaskRemotely();
     return false;
   });
   bindTodos($('.todos input[type="checkbox"]'), false);
@@ -9,6 +10,7 @@ $(function() {
 });
 
 function bindTodos(elements, completed) {
+  console.log("bind todos = " + completed + " count = " + elements.length);
   elements.each(function() {
     $(this).click(function() {
       var input = $(this);
@@ -16,7 +18,7 @@ function bindTodos(elements, completed) {
       parent.slideToggle("fast", function() {
         input.unbind();
         bindTodos(input, !completed);
-        parent.appendTo((completed? '.todos' : '.completed_todos')).slideToggle();
+        $(this).appendTo((completed? '.todos' : '.completed_todos')).slideToggle();
       });
     });
   });
@@ -42,7 +44,7 @@ function appendTodo() {
   }
 }
 
-function addTaskRemotely() {
+function saveTaskRemotely() {
   var todoInput = $('#todo');
   var value = todoInput.val();
   todoInput.val('');
